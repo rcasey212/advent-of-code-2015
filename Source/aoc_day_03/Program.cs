@@ -12,6 +12,16 @@ namespace aoc_day_03
         static void Main(string[] args)
         {
             string filename = args[0];
+
+            int numberOfHouses_part01 = Part01(filename);
+            int numberOfHouses_part02 = Part02(filename);
+
+            System.Console.WriteLine("The number of houses Santa visited is \"{0}\".", numberOfHouses_part01);
+            System.Console.WriteLine("The number of houses Santa visited is \"{0}\".", numberOfHouses_part02);
+        }
+
+        static int Part01(string inputFilename)
+        {
             HashSet<Coordinate> houses = new HashSet<Coordinate>();
             int x = 0;
             int y = 0;
@@ -20,7 +30,7 @@ namespace aoc_day_03
             Coordinate initialHouse = new Coordinate(x, y);
             houses.Add(initialHouse);
 
-            using (StreamReader fileReader = new StreamReader(filename))
+            using (StreamReader fileReader = new StreamReader(inputFilename))
             {
                 while (fileReader.Peek() > 0)
                 {
@@ -54,8 +64,65 @@ namespace aoc_day_03
                 fileReader.Close();
             }
 
-            int numberOfHouses = houses.Count;
-            System.Console.WriteLine("The number of houses Santa visited is \"{0}\".", numberOfHouses);
+            return houses.Count;
+        }
+
+        static int Part02(string inputFilename)
+        {
+            HashSet<Coordinate> visitedHouseCoords = new HashSet<Coordinate>();
+            Coordinate current_santa_coord = new Coordinate(0, 0);
+            Coordinate current_robo_coord = new Coordinate(0, 0);
+            bool isSanta = true;
+
+            // Add initial house (starting position)
+            visitedHouseCoords.Add(new Coordinate(0, 0));
+
+            using (StreamReader fileReader = new StreamReader(inputFilename))
+            {
+                while (fileReader.Peek() > 0)
+                {
+                    char c = (char)fileReader.Read();
+
+                    Coordinate coord;
+                    if (isSanta)
+                    {
+                        coord = current_santa_coord;
+                    }
+                    else
+                    {
+                        coord = current_robo_coord;
+                    }
+
+                    switch (c)
+                    {
+                        case '<':
+                            coord.X--;
+                            break;
+                        case '>':
+                            coord.X++;
+                            break;
+                        case '^':
+                            coord.Y--;
+                            break;
+                        case 'v':
+                            coord.Y++;
+                            break;
+                        default:
+                            throw new Exception("The land of 10,000 NOPES.");
+                    }
+
+                    if (!visitedHouseCoords.Contains(coord))
+                    {
+                        visitedHouseCoords.Add(coord);
+                    }
+
+                    isSanta = !isSanta;
+                }
+
+                fileReader.Close();
+            }
+
+            return visitedHouseCoords.Count;
         }
     }
 }
