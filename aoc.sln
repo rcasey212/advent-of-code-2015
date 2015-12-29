@@ -15,6 +15,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aoc_day_03", "Source\aoc_da
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InputData", "InputData", "{27F06758-CE7B-4790-A646-D18E0C890C02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aoc_2015_test", "Test\aoc_2015_test\aoc_2015_test.csproj", "{39002FC0-E8CC-4020-8886-FB2440F4989B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{F747B9F3-BFD2-4ADC-BFDF-380AC3E4A071}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NUnit", "NUnit", "{648A135B-403D-4047-BB91-950ECB398F89}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\NUnit\nunit-console-runner.dll = Libs\NUnit\nunit-console-runner.dll
+		Libs\NUnit\nunit.core.dll = Libs\NUnit\nunit.core.dll
+		Libs\NUnit\nunit.core.interfaces.dll = Libs\NUnit\nunit.core.interfaces.dll
+		Libs\NUnit\nunit.framework.dll = Libs\NUnit\nunit.framework.dll
+		Libs\NUnit\nunit.framework.xml = Libs\NUnit\nunit.framework.xml
+		Libs\NUnit\nunit.mocks.dll = Libs\NUnit\nunit.mocks.dll
+		Libs\NUnit\nunit.util.dll = Libs\NUnit\nunit.util.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +48,10 @@ Global
 		{FA62735F-D090-47F9-962B-BDDFD6BA5EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA62735F-D090-47F9-962B-BDDFD6BA5EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA62735F-D090-47F9-962B-BDDFD6BA5EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39002FC0-E8CC-4020-8886-FB2440F4989B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39002FC0-E8CC-4020-8886-FB2440F4989B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39002FC0-E8CC-4020-8886-FB2440F4989B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39002FC0-E8CC-4020-8886-FB2440F4989B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,5 +60,7 @@ Global
 		{01129922-74E5-4853-9DB1-AFEBC5A2ED49} = {24A76D58-8ECF-4188-AF99-6E75553F1A73}
 		{EF73915D-BFF6-492F-A4CC-28693E28F064} = {24A76D58-8ECF-4188-AF99-6E75553F1A73}
 		{FA62735F-D090-47F9-962B-BDDFD6BA5EBA} = {24A76D58-8ECF-4188-AF99-6E75553F1A73}
+		{39002FC0-E8CC-4020-8886-FB2440F4989B} = {11FC40F4-A436-488F-B6B0-B68E06AF471B}
+		{648A135B-403D-4047-BB91-950ECB398F89} = {F747B9F3-BFD2-4ADC-BFDF-380AC3E4A071}
 	EndGlobalSection
 EndGlobal

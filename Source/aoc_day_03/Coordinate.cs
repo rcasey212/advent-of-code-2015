@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace aoc_day_03
 {
-    public class Coordinate
+    internal class Coordinate
     {
-        public Coordinate(int x, int y)
+        internal Coordinate(int x, int y)
         {
             this.X = x;
             this.Y = y;
         }
-        public int X { get; }
-        public int Y { get; }
+        internal int X { get; set; }
+        internal int Y { get; set; }
 
-        
+
         // override Equals and GetHashcode...
         public override bool Equals(object obj)
         {
@@ -34,10 +34,7 @@ namespace aoc_day_03
 
         public override int GetHashCode()
         {
-            int hashCode = 0;
-            hashCode ^= X.GetHashCode();
-            hashCode ^= Y.GetHashCode();
-            return hashCode;
+            return Tuple.Create(X, Y).GetHashCode();
         }
 
     }
