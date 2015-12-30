@@ -9,8 +9,6 @@ namespace aoc_2015_test
     [TestFixture]
     public class aoc_day_04_tests
     {
-        const string AOC_03_TEST_PATH = @".\TestFiles\aoc_day_04\";
-
         [SetUp]
         public void SetUpFixture()
         { }
