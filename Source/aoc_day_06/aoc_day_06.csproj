@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{39002FC0-E8CC-4020-8886-FB2440F4989B}</ProjectGuid>
+    <ProjectGuid>{C5B3E653-5AEE-403C-BCCC-F68F1CBF717B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>aoc_2015_test</RootNamespace>
-    <AssemblyName>aoc_2015_test</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>aoc_day_06</RootNamespace>
+    <AssemblyName>aoc_day_06</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,17 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit-console-runner, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\NUnit\nunit-console-runner.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\NUnit\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.util">
-      <HintPath>..\..\Libs\NUnit\nunit.util.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -56,10 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="aoc_day_03_tests.cs" />
-    <Compile Include="aoc_day_04_tests.cs" />
-    <Compile Include="aoc_day_05_tests.cs" />
-    <Compile Include="aoc_day_06_tests.cs" />
+    <Compile Include="LightArray.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,32 +52,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Source\aoc_day_03\aoc_day_03.csproj">
-      <Project>{fa62735f-d090-47f9-962b-bddfd6ba5eba}</Project>
-      <Name>aoc_day_03</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Source\aoc_day_04\aoc_day_04.csproj">
-      <Project>{484cac0a-bfae-450d-ba7f-4c821f31ec76}</Project>
-      <Name>aoc_day_04</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Source\aoc_day_05\aoc_day_05.csproj">
-      <Project>{25881351-051c-4d99-a7c4-7e433d7a45f7}</Project>
-      <Name>aoc_day_05</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Source\aoc_day_06\aoc_day_06.csproj">
-      <Project>{c5b3e653-5aee-403c-bccc-f68f1cbf717b}</Project>
-      <Name>aoc_day_06</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="TestFiles\aoc_day_03\test_01.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestFiles\aoc_day_03\test_02.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestFiles\aoc_day_03\test_03.txt">
+    <Content Include="InputData\aoc_06_input.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

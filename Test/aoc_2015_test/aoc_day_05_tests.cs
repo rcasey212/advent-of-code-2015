@@ -1,10 +1,11 @@
 ﻿using NUnit.Framework;
+using aoc_day_05;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using aoc_day_05;
+
 
 namespace aoc_2015_test
 {
