@@ -13,8 +13,8 @@ namespace aoc_day_03
             this.X = x;
             this.Y = y;
         }
-        public int X { get; set; }
-        public int Y { get; set; }
+        public int X { get; }
+        public int Y { get; }
 
         
         // override Equals and GetHashcode...
