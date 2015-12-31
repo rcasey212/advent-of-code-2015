@@ -29,6 +29,8 @@ namespace aoc_2015_test
         }
 
         [Test]
+        [TestCase("aaa", ExpectedResult = false)]
+        [TestCase("aaaa", ExpectedResult = true)]
         [TestCase("qjhvhtzxzqqjkmpb", ExpectedResult = true)]
         [TestCase("xxyxx", ExpectedResult = true)]
         [TestCase("uurcxstgmygtbstg", ExpectedResult = false)]

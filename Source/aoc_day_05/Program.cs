@@ -34,8 +34,8 @@ namespace aoc_day_05
         public static bool IsNiceStringA(string input)
         {
             if (HasAtLeastOneContiguousDuplicateLetter(input) &&
-                        0 == GetCountOfMatchedStrings(input, MUST_NOT_CONTAIN_ANY_OF_THESE) &&
-                        2 < GetCountOfMatchedStrings(input, MUST_CONTAIN_3_OF_THESE))
+                        0 == GetCountOfMatchedNonOverlappingStrings(input, MUST_NOT_CONTAIN_ANY_OF_THESE) &&
+                        2 < GetCountOfMatchedNonOverlappingStrings(input, MUST_CONTAIN_3_OF_THESE))
             {
                 return true;
             }
@@ -129,7 +129,7 @@ namespace aoc_day_05
             return hasDuplicate;
         }
 
-        private static int GetCountOfMatchedStrings(string input, string[] toMatch)
+        private static int GetCountOfMatchedNonOverlappingStrings(string input, string[] toMatch)
         {
             int count = 0;
             string source = input;
@@ -180,15 +180,23 @@ namespace aoc_day_05
             {
                 if ('\0' != oneAgo)
                 {
-                    pairsToSearch.Add(string.Format("{0}{1}", oneAgo, c));
+                    string pairToAdd = string.Format("{0}{1}", oneAgo, c);
+                    if (!pairsToSearch.Contains(pairToAdd))
+                    {
+                        pairsToSearch.Add(pairToAdd);
+                    }
                 }
 
                 oneAgo = c;
             }
 
-            if (GetCountOfMatchedStrings(input, pairsToSearch.ToArray()) > 1)
+            if (GetCountOfMatchedNonOverlappingStrings(input, pairsToSearch.ToArray()) > pairsToSearch.Count())
             {
                 return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

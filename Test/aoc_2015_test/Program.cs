@@ -14,7 +14,7 @@ namespace aoc_2015_test
         {
             List<string> runnerArgs = new List<string>();
             runnerArgs.Add(Assembly.GetExecutingAssembly().Location);
-            runnerArgs.Add("/run=aoc_2015_test.aoc_day_05_tests.FunctionalTestA");
+            //runnerArgs.Add("/run=aoc_2015_test.aoc_day_05_tests.FunctionalTestA");
             runnerArgs.Add("/run=aoc_2015_test.aoc_day_05_tests.FunctionalTestB");
             NUnit.ConsoleRunner.Runner.Main(runnerArgs.ToArray());
         }
