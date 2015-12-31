@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FA62735F-D090-47F9-962B-BDDFD6BA5EBA}</ProjectGuid>
+    <ProjectGuid>{39002FC0-E8CC-4020-8886-FB2440F4989B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>aoc_day_03</RootNamespace>
-    <AssemblyName>aoc_day_03</AssemblyName>
+    <RootNamespace>aoc_2015_test</RootNamespace>
+    <AssemblyName>aoc_2015_test</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,6 +34,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit-console-runner, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\NUnit\nunit-console-runner.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\NUnit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.util">
+      <HintPath>..\..\Libs\NUnit\nunit.util.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,17 +55,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coordinate.cs" />
-    <Compile Include="Runner.cs" />
+    <Compile Include="aoc_day_03_tests.cs" />
+    <Compile Include="aoc_day_04_tests.cs" />
+    <Compile Include="aoc_day_05_tests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\aoc_day_03\aoc_day_03.csproj">
+      <Project>{fa62735f-d090-47f9-962b-bddfd6ba5eba}</Project>
+      <Name>aoc_day_03</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\aoc_day_04\aoc_day_04.csproj">
+      <Project>{484cac0a-bfae-450d-ba7f-4c821f31ec76}</Project>
+      <Name>aoc_day_04</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\aoc_day_05\aoc_day_05.csproj">
+      <Project>{25881351-051c-4d99-a7c4-7e433d7a45f7}</Project>
+      <Name>aoc_day_05</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="InputData\aoc_03_input.txt">
+    <Content Include="TestFiles\aoc_day_03\test_01.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\aoc_day_03\test_02.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\aoc_day_03\test_03.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
