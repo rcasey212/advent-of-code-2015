@@ -14,33 +14,11 @@ namespace aoc_day_06
         {
             string filename = args[0];
 
-            LightArray partA = new LightArray(1000, 1000);
-            partA.TurnOffAllLights();
+            int partA_LightsOn = Day_06_Part_A(filename);
+            int partB_TotalBrightness = Day_06_Part_B(filename);
 
-            foreach (Tuple<int,Point,Point> command in EnumerateCommands(filename))
-            {
-                switch (command.Item1)
-                {
-                    // turn on
-                    case 0:
-                        partA.TurnOnRectangle(command.Item2, command.Item3);
-                        break;
-
-                    // turn off
-                    case 1:
-                        partA.TurnOffRectangle(command.Item2, command.Item3);
-                        break;
-
-                    // toggle
-                    case 2:
-                        partA.ToggleRectangle(command.Item2, command.Item3);
-                        break;
-                    default:
-                        throw new Exception("n0pe!");
-                }
-            }
-
-            System.Console.WriteLine("Part A: The number of lights on is \"{0}\".", partA.GetCountOfLightsInState(true));
+            System.Console.WriteLine("Part A: The number of lights on is \"{0}\".", partA_LightsOn);
+            System.Console.WriteLine("Part B: The total brightness of all lights is \"{0}\".", partB_TotalBrightness);
         }
 
         static IEnumerable<Tuple<int, Point, Point>> EnumerateCommands(string filename)
@@ -86,6 +64,68 @@ namespace aoc_day_06
 
                 fileReader.Close();
             }
+        }
+
+        static public int Day_06_Part_A(string filename)
+        {
+            LightArray partA = new LightArray(1000, 1000);
+            partA.TurnOffAllLights();
+
+            foreach (Tuple<int, Point, Point> command in EnumerateCommands(filename))
+            {
+                switch (command.Item1)
+                {
+                    // turn on
+                    case 0:
+                        partA.TurnOnRectangle(command.Item2, command.Item3);
+                        break;
+
+                    // turn off
+                    case 1:
+                        partA.TurnOffRectangle(command.Item2, command.Item3);
+                        break;
+
+                    // toggle
+                    case 2:
+                        partA.ToggleRectangle(command.Item2, command.Item3);
+                        break;
+                    default:
+                        throw new Exception("n0pe!");
+                }
+            }
+
+            return partA.GetCountOfLightsOn();
+        }
+
+        static public int Day_06_Part_B(string filename)
+        {
+            LightArray partB = new LightArray(1000, 1000);
+            partB.TurnOffAllLights();
+
+            foreach (Tuple<int, Point, Point> command in EnumerateCommands(filename))
+            {
+                switch (command.Item1)
+                {
+                    // turn on
+                    case 0:
+                        partB.IncrementRectangle(command.Item2, command.Item3);
+                        break;
+
+                    // turn off
+                    case 1:
+                        partB.DecrementRectangle(command.Item2, command.Item3);
+                        break;
+
+                    // toggle
+                    case 2:
+                        partB.IncrementRectangle(command.Item2, command.Item3, 2);
+                        break;
+                    default:
+                        throw new Exception("n0pe!");
+                }
+            }
+
+            return partB.GetTotalBrightness();
         }
     }
 }

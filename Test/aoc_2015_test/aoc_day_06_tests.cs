@@ -33,7 +33,7 @@ namespace aoc_2015_test
             lightArr.TurnOnRectangle(new Point(startX, startY), new Point(endX, endY));
 
             // test count of turned-on lights
-            return lightArr.GetCountOfLightsInState(true);
+            return lightArr.GetCountOfLightsOn();
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace aoc_2015_test
             lightArr.TurnOffRectangle(new Point(startX, startY), new Point(endX, endY));
 
             // test count of turned-off lights
-            return lightArr.GetCountOfLightsInState(false);
+            return lightArr.GetCountOfLightsOff();
         }
     }
 }
